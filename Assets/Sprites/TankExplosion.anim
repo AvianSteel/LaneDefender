@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TankExplosion
+  serializedVersion: 7
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_EulerCurves: []
+  m_PositionCurves: []
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves:
+  - serializedVersion: 2
+    curve:
+    - time: 0
+      value: {fileID: 2677838272024661893, guid: 60f69c1f42c25084c817a5caa0a61983, type: 3}
+    - time: 0.083333336
+      value: {fileID: 741131219396589392, guid: d5196fac5a0b61b499c783a0a058ca14, type: 3}
+    - time: 0.16666667
+      value: {fileID: 7306600018983515839, guid: 1d30cbaec298eed4fa80042348ebd115, type: 3}
+    - time: 0.25
+      value: {fileID: -7936274082060803820, guid: 5f6991fd42707284087e043f791b6ec9, type: 3}
+    - time: 0.33333334
+      value: {fileID: 5230519454367180537, guid: 0798460dd6d5f1f4a925a23d7fa7ddee, type: 3}
+    - time: 0.41666666
+      value: {fileID: 8646716217489334455, guid: c7dedff48e24ac64e984e16529f6428d, type: 3}
+    - time: 0.5
+      value: {fileID: -8093390021244846567, guid: 1ec38c674d15fd942a1eaec6a0f7bd8f, type: 3}
+    - time: 0.5833333
+      value: {fileID: -1137386007360399507, guid: df25c88f33cfb6544a1fe052f7a82d1d, type: 3}
+    - time: 0.6666667
+      value: {fileID: -7105829097658445903, guid: 2b0c7fbb5879e5f47b8f2d23fce71a35, type: 3}
+    - time: 0.75
+      value: {fileID: 1315220005431682452, guid: 1aefdea134ab6594c885d901e098fa0f, type: 3}
+    - time: 0.8333333
+      value: {fileID: -3652981073598435299, guid: cd435e68d8bc3064e9c9ba791759f01c, type: 3}
+    - time: 0.9166667
+      value: {fileID: 297231802958270838, guid: d230822626cccad47933c423bbd0a454, type: 3}
+    attribute: m_Sprite
+    path: 
+    classID: 212
+    script: {fileID: 0}
+    flags: 2
+  m_SampleRate: 12
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - serializedVersion: 2
+      path: 0
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    pptrCurveMapping:
+    - {fileID: 2677838272024661893, guid: 60f69c1f42c25084c817a5caa0a61983, type: 3}
+    - {fileID: 741131219396589392, guid: d5196fac5a0b61b499c783a0a058ca14, type: 3}
+    - {fileID: 7306600018983515839, guid: 1d30cbaec298eed4fa80042348ebd115, type: 3}
+    - {fileID: -7936274082060803820, guid: 5f6991fd42707284087e043f791b6ec9, type: 3}
+    - {fileID: 5230519454367180537, guid: 0798460dd6d5f1f4a925a23d7fa7ddee, type: 3}
+    - {fileID: 8646716217489334455, guid: c7dedff48e24ac64e984e16529f6428d, type: 3}
+    - {fileID: -8093390021244846567, guid: 1ec38c674d15fd942a1eaec6a0f7bd8f, type: 3}
+    - {fileID: -1137386007360399507, guid: df25c88f33cfb6544a1fe052f7a82d1d, type: 3}
+    - {fileID: -7105829097658445903, guid: 2b0c7fbb5879e5f47b8f2d23fce71a35, type: 3}
+    - {fileID: 1315220005431682452, guid: 1aefdea134ab6594c885d901e098fa0f, type: 3}
+    - {fileID: -3652981073598435299, guid: cd435e68d8bc3064e9c9ba791759f01c, type: 3}
+    - {fileID: 297231802958270838, guid: d230822626cccad47933c423bbd0a454, type: 3}
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 1
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 1
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves: []
+  m_EulerEditorCurves: []
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_Events: []
