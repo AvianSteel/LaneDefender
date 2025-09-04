@@ -14,7 +14,7 @@ public class BulletController : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Rigidbody2D>();
-        rb.position = player.position;
+        //rb.position = new Vector2(player.position.x, player.position.y);
     }
 
     private void FixedUpdate()

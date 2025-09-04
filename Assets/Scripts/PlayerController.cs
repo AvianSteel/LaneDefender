@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
     {
         while (isShooting)
         {
-            Instantiate(bullet, new Vector2(rb.position.x, rb.position.y), Quaternion.identity);
+            Instantiate(bullet, new Vector2(rb.position.x + 0.343f, rb.position.y + 0.181f), Quaternion.identity);
             yield return new WaitForSecondsRealtime(0.75f);
         }
     }
