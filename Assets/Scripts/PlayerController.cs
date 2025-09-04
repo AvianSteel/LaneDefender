@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] private GameObject bullet;
     [SerializeField] private PlayerController playerController;
+    [SerializeField] private GameObject[] lanePoints;
 
     private InputAction upMove;
     private InputAction downMove;
@@ -18,11 +20,13 @@ public class PlayerController : MonoBehaviour
     private InputAction restart;
     private InputAction quit;
 
-    private bool isMovingUp;
-    private bool isMovingDown;
+
     private bool isShooting;
 
     private int lives;
+    private int laneIndex;
+
+    private Coroutine bulletFire;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,13 +39,13 @@ public class PlayerController : MonoBehaviour
         restart = playerInput.currentActionMap.FindAction("Restart");
 
         upMove.started += UpMove_started;
-        upMove.canceled += UpMove_canceled;
         downMove.started += DownMove_started;
-        downMove.canceled += DownMove_canceled;
         shoot.started += Shoot_started;
         shoot.canceled += Shoot_canceled;
         restart.started += Restart_started;
         quit.started += Quit_started;
+
+        laneIndex = 2;
     }
     #region Input Actions
     private void Quit_started(InputAction.CallbackContext obj)
@@ -62,29 +66,41 @@ public class PlayerController : MonoBehaviour
     private void Shoot_started(InputAction.CallbackContext obj)
     {
         isShooting = true;
-    }
-
-    private void DownMove_canceled(InputAction.CallbackContext obj)
-    {
-        isMovingDown = false;
+        StartCoroutine(BulletAutoFire());
     }
 
     private void DownMove_started(InputAction.CallbackContext context)
     {
-        isMovingDown = true;
-    }
-
-    private void UpMove_canceled(InputAction.CallbackContext obj)
-    {
-        isMovingUp = false;
+        //isMovingDown = true;
+        if(laneIndex < 4)
+        {
+            laneIndex++;
+        }
     }
 
     private void UpMove_started(InputAction.CallbackContext obj)
     {
-        isMovingUp = true;
+        //isMovingUp = true;
+        if (laneIndex > 0)
+        {
+            laneIndex--;
+        }
     }
     #endregion
 
+    private void FixedUpdate()
+    {
+        rb.position = lanePoints[laneIndex].transform.position;
+    }
+
+    IEnumerator BulletAutoFire()
+    {
+        while (isShooting)
+        {
+            Instantiate(bullet, new Vector2(rb.position.x, rb.position.y), Quaternion.identity);
+            yield return new WaitForSecondsRealtime(0.75f);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
