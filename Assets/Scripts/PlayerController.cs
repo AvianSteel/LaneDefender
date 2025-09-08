@@ -23,11 +23,16 @@ public class PlayerController : MonoBehaviour
 
     private bool isShooting;
 
-    private int lives;
+    private int lives = 3;
+    private int score;
+    private int highScore;
     private int laneIndex;
 
     private Coroutine bulletFire;
-    
+
+    public int Lives { get => lives; set => lives = value; }
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -92,6 +97,20 @@ public class PlayerController : MonoBehaviour
     {
         rb.position = lanePoints[laneIndex].transform.position;
     }
+    public void IncreaseScore()
+    {
+        score += 100;
+        Debug.Log(score);
+        if(score > highScore)
+        {
+            highScore = score;
+        }
+    }
+    public void DecreaseLives()
+    {
+        Lives -= 1;
+        Debug.Log(lives);
+    }
 
     IEnumerator BulletAutoFire()
     {
@@ -104,6 +123,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Lives < 1)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }

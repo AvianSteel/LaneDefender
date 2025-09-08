@@ -14,9 +14,12 @@ public class BulletController : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Rigidbody2D>();
-        //rb.position = new Vector2(player.position.x, player.position.y);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(bullet);
+    }
     private void FixedUpdate()
     {
         rb.position = new Vector2(rb.position.x + speed, rb.position.y);
