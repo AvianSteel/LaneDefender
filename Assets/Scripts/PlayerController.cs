@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -13,6 +14,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private GameObject[] lanePoints;
+
+    [SerializeField] private TMP_Text scoreText;
+    [SerializeField] private TMP_Text highScoreText;
+    [SerializeField] private TMP_Text livesText;
 
     private InputAction upMove;
     private InputAction downMove;
@@ -51,6 +56,12 @@ public class PlayerController : MonoBehaviour
         quit.started += Quit_started;
 
         laneIndex = 2;
+
+        highScore = PlayerPrefs.GetInt("HighScore");
+
+        scoreText.text = "Score: " + score.ToString();
+        highScoreText.text = "High Score: " + highScore.ToString();
+        livesText.text = "Lives: " + lives.ToString();
     }
     #region Input Actions
     private void Quit_started(InputAction.CallbackContext obj)
@@ -100,16 +111,18 @@ public class PlayerController : MonoBehaviour
     public void IncreaseScore()
     {
         score += 100;
-        Debug.Log(score);
-        if(score > highScore)
+        scoreText.text = "Score: " + score.ToString();
+        if (score > highScore)
         {
             highScore = score;
+            PlayerPrefs.SetInt("HighScore", highScore);
+            highScoreText.text = "High Score: " + highScore.ToString();
         }
     }
     public void DecreaseLives()
     {
         Lives -= 1;
-        Debug.Log(lives);
+        livesText.text = "Lives: " + lives.ToString();
     }
 
     IEnumerator BulletAutoFire()
